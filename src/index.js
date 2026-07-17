@@ -1,5 +1,5 @@
-async function getData(pokemon) {
-    const url = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+async function getData(dominio, pokemon) {
+    const url = `https://pokeapi.co/api/v2/${dominio}/${pokemon}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -13,9 +13,24 @@ async function getData(pokemon) {
     }
 }
 
-const ditto = await getData("ditto")
-console.log(ditto.weight)
-const pikachu = await getData("pikachu")
-console.log(pikachu.weight)
+function getdescription(flavor_text_entries) {
+    for (const flavor of flavor_text_entries) {
+        if (flavor.language !== undefined && flavor.language.name === "en") {
+            return flavor.flavor_text
+        }
+    }
 
+}
 
+const ditto = await getData("pokemon", "pikachu")
+console.log(ditto.name)
+let name = ditto.name
+let id = ditto.id
+let species = await getData("pokemon-species", id)
+let description = getdescription(species.flavor_text_entries)
+let cry = ditto.cries.latest
+let types = ditto.types
+let sprites = ditto.sprites.front_default
+
+// name description cry tipos sprite  https://pokeapi.co/api/v2/pokemon-species/132/
+// species.flavor_text_entries[] language.name = "en"
