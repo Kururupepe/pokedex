@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Dsfont';
+    src: url(./pokemon-ds-font.woff) format('woff');
+
+}
+
+body {
+    font-family: "Dsfont";
+}
+
