@@ -6,5 +6,33 @@
 
 body {
     font-family: "Dsfont";
+    padding: 0px;
+    margin: 0px;
 }
 
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 85%;
+    width: 100%;
+    min-height: 60px;
+
+    
+    background: linear-gradient(90deg, #a7001e 2%, #e00c29 3%, #ff1d35 96%, #e00c29 97%, #a7001e 98%);
+    border-bottom: 8px solid #3f3f3f;
+}
+
+header .lng {
+    
+    background: white;
+    padding: 4px;
+    border-radius: 15px;
+
+
+}
+
+.arrow {
+    width: 40px;
+    height: auto;
+}
