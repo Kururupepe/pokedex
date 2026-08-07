@@ -45,6 +45,17 @@ async function getPokemon(pokemonName) {
 
     return result
 }
+
+const button = document.querySelector('.sound-btn');
+const audio = document.getElementById('cry');
+
+button.addEventListener('click', () => {
+    audio.currentTime = 0; // Rewind to start if clicked repeatedly
+    audio.play();
+});
+
+
+
 (async () => {
     const ditto = await getPokemon("ditto")
     console.log(ditto.name)
@@ -57,13 +68,25 @@ async function getPokemon(pokemonName) {
     const namePoke = document.getElementById("name")
     const genPoke = document.getElementById("genera")
     const spritePoke = document.getElementById("sprites")
+    const cryPoke = document.getElementById("cry")
     numPoke.textContent = ditto.id
     namePoke.textContent = ditto.name
     genPoke.textContent = ditto.genera
-    spritePoke.setAttribute("src",ditto.sprite) 
-    
+    spritePoke.setAttribute("src", ditto.sprite)
+    cryPoke.setAttribute("src", ditto.cry)
+
 
 })();
+const soundBtn = document.getElementById(".sound-btn");
+
+soundBtn.addEventListener("mouseenter", () => {
+    soundBtn.src = "pokecry-hover.png";
+});
+
+soundBtn.addEventListener("mouseleave", () => {
+    soundBtn.src = "pokecry.png";
+});
+
 // id="pokenumber">
 // id="name">
 // id="flavorname">
