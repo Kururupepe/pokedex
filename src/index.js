@@ -21,6 +21,7 @@ function getDescription(flavor_text_entries) {
     }
 
 }
+
 function getGenera(genera) {
     for (const gen of genera) {
         if (gen.language !== undefined && gen.language.name === "en") {
@@ -28,6 +29,10 @@ function getGenera(genera) {
         }
     }
 
+}
+
+function getTypes(types) {
+    return types
 }
 
 async function getPokemon(pokemonName) {
@@ -40,7 +45,9 @@ async function getPokemon(pokemonName) {
         cry: pokemon.cries.latest,
         types: pokemon.types,
         sprite: pokemon.sprites.front_default,
-        genera: getGenera(species.genera)
+        genera: getGenera(species.genera),
+        weight: pokemon.weight,
+        height: pokemon.height,
     }
 
     return result
@@ -52,33 +59,59 @@ const audio = document.getElementById('cry');
 button.addEventListener('click', () => {
     audio.currentTime = 0; // Rewind to start if clicked repeatedly
     audio.play();
+    audio.volume = 0.4;
 });
 
+const sbutton = document.getElementById("searchbtn")
+sbutton.addEventListener("click", async () => {
 
+    const query = document.getElementById("query")
+    console.log(query.value)
 
-(async () => {
-    const ditto = await getPokemon("ditto")
-    console.log(ditto.name)
+    const ditto = await getPokemon(query.value)
 
-    const pikachu = await getPokemon("pikachu")
-    console.log(pikachu.name)
-    const docPoke = document.getElementById("pokemon")
-    docPoke.textContent = JSON.stringify(ditto)
     const numPoke = document.getElementById("pokenumber")
+    numPoke.textContent = ditto.id 
+
     const namePoke = document.getElementById("name")
-    const genPoke = document.getElementById("genera")
-    const spritePoke = document.getElementById("sprites")
-    const cryPoke = document.getElementById("cry")
-    numPoke.textContent = ditto.id
     namePoke.textContent = ditto.name
+    
+    const genPoke = document.getElementById("genera")
     genPoke.textContent = ditto.genera
+    
+    const spritePoke = document.getElementById("sprites")
     spritePoke.setAttribute("src", ditto.sprite)
+    
+    const cryPoke = document.getElementById("cry")
     cryPoke.setAttribute("src", ditto.cry)
+    
+    const type1Poke = document.getElementById("type1")
+    type1Poke.textContent = ditto.types[0].type.name
+    type1Poke.className = `type ${ditto.types[0].type.name}`
+    
+    const type2Poke = document.getElementById("type2")
+    if (ditto.types[1] !== undefined) {
+        type2Poke.textContent = ditto.types[1].type.name
+        type2Poke.className = `type ${ditto.types[1].type.name}`
+    }
+    
+    const weightPoke = document.getElementById("weight")
+    weightPoke.textContent = ditto.weight
+    
+    const heightPoke = document.getElementById("height")
+    heightPoke.textContent = ditto.height
+    
+    const descPoke = document.getElementById("description")
+    descPoke.textContent = ditto.description
+    
+    
 
+    
 
-})();
+});
+
 const soundBtn = document.getElementById(".sound-btn");
-
+//reemplazar por CSS ⬇️
 soundBtn.addEventListener("mouseenter", () => {
     soundBtn.src = "pokecry-hover.png";
 });

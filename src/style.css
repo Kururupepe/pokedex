@@ -12,9 +12,8 @@ body {
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    gap: 85%;
     width: 100%;
     min-height: 60px;
 
@@ -28,7 +27,7 @@ header .lng {
     background: white;
     padding: 4px;
     border-radius: 15px;
-
+    margin-right: 20px;
 
 }
 
@@ -127,4 +126,96 @@ header .lng {
 
 .sound-btn:hover {
     background-image: url("pokecry-hover.png");
+}
+.type {
+    width: 95px;
+    height: 35px;
+    color: white;
+}
+
+.normal {
+    background-color: grey;
+}
+
+.fire {
+    background-color: orangered;
+}
+
+.fighting {
+    background-color: red;
+}
+
+.water {
+    background-color: blue;
+
+}
+
+.flying {
+    background-color: cyan;
+
+}
+
+.grass {
+    background-color: green;
+
+}
+
+.poison {
+    background-color: purple;
+
+}
+
+.electric {
+    background-color: yellow;
+
+}
+
+.ground {
+    background-color: burlywood;
+
+}
+
+.psychic {
+    background-color: plum;
+
+}
+
+.rock {
+    background-color: brown;
+
+}
+
+.ice {
+    background-color: cadetblue;
+
+}
+
+.bug {
+    background-color: greenyellow;
+
+}
+
+.dragon {
+    background-color: blueviolet;
+
+}
+
+.ghost {
+    background-color: bisque;
+
+}
+
+.dark {
+    background-color: ghostwhite;
+
+}
+
+.steel {
+    background-color: silver;
+
+}
+
+.fairy {
+    background-color: pink;
+
 }
