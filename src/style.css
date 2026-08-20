@@ -135,95 +135,113 @@ header .lng {
     background-image: url("pokecry-hover.png");
 }
 
+#type {
+    display: flex;
+    gap: 10px;
+
+}
+
 .type {
     width: 95px;
     height: 35px;
     color: white;
+    border: black, solid 3px;
+    text-align: center;
+    border-radius: 5px;
+    corner-shape: scoop;
+    background-color: #50a191;
+}
+
+.scream-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 
 .normal {
-    background-color: grey;
+    background-color: #9ea19f;
 }
 
 .fire {
-    background-color: orangered;
+    background-color: #ff102b;
 }
 
 .fighting {
-    background-color: red;
+    background-color: #ff7c27;
 }
 
 .water {
-    background-color: blue;
+    background-color: #ff102b;
 
 }
 
 .flying {
-    background-color: cyan;
+    background-color: #70b9eb;
 
 }
 
 .grass {
-    background-color: green;
+    background-color: #00a33f;
 
 }
 
 .poison {
-    background-color: purple;
+    background-color: #a237c4;
 
 }
 
 .electric {
-    background-color: yellow;
+    background-color: #ffc03c;
 
 }
 
 .ground {
-    background-color: burlywood;
+    background-color: #9c5028;
 
 }
 
 .psychic {
-    background-color: plum;
+    background-color: #ff3376;
 
 }
 
 .rock {
-    background-color: brown;
+    background-color: #b0a985;
 
 }
 
 .ice {
-    background-color: cadetblue;
+    background-color: #00cff0;
 
 }
 
 .bug {
-    background-color: greenyellow;
+    background-color: #8aa337;
 
 }
 
 .dragon {
-    background-color: blueviolet;
+    background-color: #555cda;
 
 }
 
 .ghost {
-    background-color: #6a61b3;
+    background-color: #7a3e6d;
 
 }
 
 .dark {
-    background-color: ghostwhite;
+    background-color: #674c4e;
 
 }
 
 .steel {
-    background-color: silver;
+    background-color: #44a2b6;
 
 }
 
 .fairy {
-    background-color: pink;
+    background-color: #ff67e8;
 
 }
