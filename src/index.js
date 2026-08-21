@@ -71,42 +71,42 @@ sbutton.addEventListener("click", async () => {
     const ditto = await getPokemon(query.value)
 
     const numPoke = document.getElementById("pokenumber")
-    numPoke.textContent = ditto.id 
+    numPoke.textContent = ditto.id
 
     const namePoke = document.getElementById("name")
     namePoke.textContent = ditto.name
-    
+
     const genPoke = document.getElementById("genera")
     genPoke.textContent = ditto.genera
-    
+
     const spritePoke = document.getElementById("sprites")
     spritePoke.setAttribute("src", ditto.sprite)
-    
+
     const cryPoke = document.getElementById("cry")
     cryPoke.setAttribute("src", ditto.cry)
-    
+
     const type1Poke = document.getElementById("type1")
     type1Poke.textContent = ditto.types[0].type.name
     type1Poke.className = `type ${ditto.types[0].type.name}`
-    
+
     const type2Poke = document.getElementById("type2")
     if (ditto.types[1] !== undefined) {
         type2Poke.textContent = ditto.types[1].type.name
         type2Poke.className = `type ${ditto.types[1].type.name}`
     }
-    
-    const weightPoke = document.getElementById("weight")
-    weightPoke.textContent = ditto.weight
-    
-    const heightPoke = document.getElementById("height")
-    heightPoke.textContent = ditto.height
-    
-    const descPoke = document.getElementById("description")
-    descPoke.textContent = ditto.description
-    
-    
 
-    
+    const weightPoke = document.getElementById("weight")
+    weightPoke.textContent = ditto.weight / 10 + " kg"
+
+    const heightPoke = document.getElementById("height")
+    heightPoke.textContent = ditto.height / 10 + " m"
+
+    const descPoke = document.getElementById("description")
+    descPoke.textContent = ditto.description.replace("\f", " ")
+
+
+
+
 
 });
 

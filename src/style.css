@@ -22,8 +22,6 @@ header {
     align-items: center;
     width: 100%;
     min-height: 60px;
-
-
     background: linear-gradient(90deg, #a7001e 2%, #e00c29 3%, #ff1d35 96%, #e00c29 97%, #a7001e 98%);
     border-bottom: 8px solid #3f3f3f;
 }
@@ -52,7 +50,10 @@ header .lng {
     display: flex;
     flex-direction: column;
     border: #40524e solid 4px;
-    border-radius: 10px;
+    border-radius: 5px;
+    corner-shape: notch;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .topID {
@@ -61,6 +62,7 @@ header .lng {
     flex-direction: row;
     gap: 20px;
     border-bottom: #ff98a6 solid 5px;
+    corner-shape: notch;
 
     align-items: center;
     background: #ff1f33;
@@ -88,9 +90,9 @@ header .lng {
 
 .grid {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     margin-top: 20px;
-    width: 60%;
+    width: 40%;
 }
 
 #sprites {
@@ -107,14 +109,18 @@ header .lng {
     display: flex;
     flex-direction: column;
     border: #40524e solid 4px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 20px;
+    corner-shape: notch;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .screamTop {
     border-bottom: #ff1d35 solid 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    corner-shape: notch;
 
 }
 
@@ -149,6 +155,7 @@ header .lng {
     text-align: center;
     border-radius: 5px;
     corner-shape: scoop;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
     background-color: #50a191;
 }
 
@@ -157,6 +164,55 @@ header .lng {
     flex-direction: row;
     align-items: center;
     gap: 30px;
+}
+
+#H-W {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: black, solid;
+    corner-shape: notch;
+    width: 200px;
+    height: 70px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 130px;
+}
+
+.WT {
+    display: flex;
+    border-bottom: #92acbc dashed 3px;
+    margin-top: 5px;
+    width: 90%;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.HT {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.desc-border {
+    width: 40%;
+    margin-top: 50px;
+    border: black solid 4px;
+    corner-shape: notch;
+    border-radius: 5px;
+    background-color: #ff0031;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#description {
+    text-align: justify;
+    margin: 0px 20px;
+    border: #ff94a5 solid;
+    background: white;
+    padding: 0px 20px;
 }
 
 .normal {
