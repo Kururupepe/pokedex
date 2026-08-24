@@ -8,6 +8,21 @@ body {
     font-family: "Dsfont";
     padding: 0px;
     margin: 0px;
+    background-image: 
+    linear-gradient(#ababab 5px, transparent 1px),
+    linear-gradient(90deg, #ababab 5px, transparent 1px);
+    background-size: 150px 150px;
+    animation: moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 150px 150px;
+    }
 }
 
 .content {
@@ -81,7 +96,7 @@ header .lng {
     display: flex;
     justify-content: end;
     padding-right: 15px;
-
+    background: white;
     p {
         margin-top: 5px;
         margin-bottom: 5px;
@@ -131,6 +146,7 @@ header .lng {
     width: 90px;
     height: 100px;
     border-top: #ff98a6 solid 2px;
+    background: white;
     background-image: url("pokecry.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -171,6 +187,7 @@ header .lng {
     display: flex;
     flex-direction: column;
     border: black, solid;
+    background: white;
     corner-shape: notch;
     width: 200px;
     height: 70px;

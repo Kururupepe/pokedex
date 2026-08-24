@@ -37,7 +37,17 @@ function getTypes(types) {
 
 async function getPokemon(pokemonName) {
     const pokemon = await getData("pokemon", pokemonName)
+
+    if (pokemon === undefined || pokemon === null) {
+        return null;
+    }
+
     let species = await getData("pokemon-species", pokemon.id)
+
+    if (species === undefined || species === null) {
+        return null;
+    }
+
     let result = {
         id: pokemon.id,
         name: pokemon.name,
@@ -91,8 +101,11 @@ sbutton.addEventListener("click", async () => {
 
     const type2Poke = document.getElementById("type2")
     if (ditto.types[1] !== undefined) {
+        type2Poke.style.display = "inline-block";
         type2Poke.textContent = ditto.types[1].type.name
         type2Poke.className = `type ${ditto.types[1].type.name}`
+    } else {
+        type2Poke.style.display = "none";
     }
 
     const weightPoke = document.getElementById("weight")
