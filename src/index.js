@@ -126,11 +126,11 @@ sbutton.addEventListener("click", async () => {
 const soundBtn = document.getElementById(".sound-btn");
 //reemplazar por CSS ⬇️
 soundBtn.addEventListener("mouseenter", () => {
-    soundBtn.src = "pokecry-hover.png";
+    soundBtn.src = "assets/pokecry-hover.png";
 });
 
 soundBtn.addEventListener("mouseleave", () => {
-    soundBtn.src = "pokecry.png";
+    soundBtn.src = "assets/pokecry.png";
 });
 
 // id="pokenumber">

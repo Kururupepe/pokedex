@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Dsfont';
-    src: url(./pokemon-ds-font.woff) format('woff');
+    src: url(./assets/pokemon-ds-font.woff) format('woff');
 
 }
 
@@ -147,14 +147,14 @@ header .lng {
     height: 100px;
     border-top: #ff98a6 solid 2px;
     background: white;
-    background-image: url("pokecry.png");
+    background-image: url("assets/pokecry.png");
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 
 .sound-btn:hover {
-    background-image: url("pokecry-hover.png");
+    background-image: url("assets/pokecry-hover.png");
 }
 
 #type {
