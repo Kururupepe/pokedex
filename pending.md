@@ -7,3 +7,8 @@ Publicar
 
 Para despues del resto
 "" Autocomplete o sugerencia de pokemones"" 
+
+phone
+sprite a la izquierda con los types abajo
+hacer la descripcion con margenes
+achicar la barra de busqueda

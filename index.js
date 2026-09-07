@@ -73,8 +73,8 @@ button.addEventListener('click', () => {
 });
 
 const sbutton = document.getElementById("searchbtn")
-sbutton.addEventListener("click", async () => {
 
+async function search(){
     const query = document.getElementById("query")
     console.log(query.value)
 
@@ -116,12 +116,9 @@ sbutton.addEventListener("click", async () => {
 
     const descPoke = document.getElementById("description")
     descPoke.textContent = ditto.description.replace("\f", " ")
+} ;
 
-
-
-
-
-});
+sbutton.addEventListener("click" , search);
 
 const soundBtn = document.getElementById(".sound-btn");
 //reemplazar por CSS ⬇️

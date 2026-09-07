@@ -15,8 +15,8 @@
     <header>
         <span><img class="arrow" src="assets/arrow.png" alt="arrow"> INFO </span>
         <div class="searchbar">
-            <input id="query"></input>
-            <button id="searchbtn">Search</button>
+            <input id="query" type="text" onkeydown="if (event.key === 'Enter') search()"></input>
+            <button id="searchbtn" type="submit">Search</button>
         </div>
         <span class="lng">ENG</span>
     </header>
@@ -25,63 +25,63 @@
         <div class="content">
 
             <div class="grid">
-                
+
                 <img id="sprites" src="assets/misigno.png" alt="misigno">
                 <div id="principal">
                     <div id="ID">
                         <div class="topID">
                             <img class="pokeball" src="assets/minipoke.png" alt="pokeball">
-                            
+
                             <p id="pokenumber">
                                 000
                             </p>
-                        <p id="name">
-                            MissingNo.
-                        </p>
-                        
-                    </div>
-                    <div class="bottomID">
-                        <p id="genera">
-                            ??? pokemon
-                        </p>
-                    </div>
-                </div>
-                <div class="scream-type">
+                            <p id="name">
+                                MissingNo.
+                            </p>
 
-                    <div class="scream">
-                        <div class="screamTop"></div>
-                        <div class="sound-btn"></div>
-                        <audio id="cry" src="assets/MissingNo.mp3"></audio>
+                        </div>
+                        <div class="bottomID">
+                            <p id="genera">
+                                ??? pokemon
+                            </p>
+                        </div>
                     </div>
-                    <div id="type">
-                        <div id="type1" class="type">???</div>
-                        <div id="type2" class="type">???</div>
+                    <div class="scream-type">
+
+                        <div class="scream">
+                            <div class="screamTop"></div>
+                            <div class="sound-btn"></div>
+                            <audio id="cry" src="assets/MissingNo.mp3"></audio>
+                        </div>
+                        <div id="type">
+                            <div id="type1" class="type">???</div>
+                            <div id="type2" class="type">???</div>
+                        </div>
                     </div>
+                    <div id="H-W">
+                        <div class="WT">
+                            WT
+                            <div id="weight">9.5 kg</div>
+                        </div>
+                        <div class="HT">
+                            HT
+                            <div id="height">0.9 m</div>
+                        </div>
+                    </div>
+
                 </div>
-                <div id="H-W">
-                    <div class="WT">
-                        WT
-                        <div id="weight">9.5 kg</div>
-                    </div>
-                    <div class="HT">
-                        HT
-                        <div id="height">0.9 m</div>
-                    </div>
+            </div>
+            <div class="desc-border">
+
+                <div id="description">
+                    MissingNO is a programming quirk, and not a real part of the game. When you get this,
+                    your game can perform strangely, and the graphics will often become scrambled.
+                    The MissingNO Pokémon is most often found after you perform the Fight Safari Zone Pokémon trick.
                 </div>
-                
             </div>
         </div>
-        <div class="desc-border">
-
-            <div id="description">
-                MissingNO is a programming quirk, and not a real part of the game. When you get this,
-                your game can perform strangely, and the graphics will often become scrambled.
-                The MissingNO Pokémon is most often found after you perform the Fight Safari Zone Pokémon trick.
-            </div>
-        </div>
-    </div>
     </main>
-    
+
     <footer>
         <p></p>
     </footer>
