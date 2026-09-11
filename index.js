@@ -74,11 +74,17 @@ button.addEventListener('click', () => {
 
 const sbutton = document.getElementById("searchbtn")
 
-async function search(){
+async function search() {
     const query = document.getElementById("query")
     console.log(query.value)
 
     const ditto = await getPokemon(query.value)
+
+    if (ditto === null) {
+        errordiv.style.display = "block";
+    } else {
+        errordiv.style.display = "none";
+    }
 
     const numPoke = document.getElementById("pokenumber")
     numPoke.textContent = ditto.id
@@ -116,9 +122,9 @@ async function search(){
 
     const descPoke = document.getElementById("description")
     descPoke.textContent = ditto.description.replace("\f", " ")
-} ;
+};
 
-sbutton.addEventListener("click" , search);
+sbutton.addEventListener("click", search);
 
 const soundBtn = document.getElementById(".sound-btn");
 //reemplazar por CSS ⬇️

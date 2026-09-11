@@ -164,7 +164,11 @@ header .lng {
 #type {
     display: flex;
     gap: 10px;
+    margin-top: 20px;
 
+    @media (min-width: 768px) {
+        margin-right: 400px;
+    }
 }
 
 .type {
@@ -184,7 +188,6 @@ header .lng {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
 }
 
 #H-W {
@@ -197,7 +200,7 @@ header .lng {
     width: 200px;
     height: 70px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    margin-left: 130px;
+    margin-left: 55px;
 }
 
 .WT {
@@ -239,6 +242,30 @@ header .lng {
     border: #ff94a5 solid;
     background: white;
     padding: 0px 20px;
+}
+
+#query {
+    @media (max-width: 480px) {
+        width: 6rem;
+    }
+}
+
+#errordiv {
+    display: none;
+}
+
+.pkmnotfound {
+    display: flex;
+    justify-content: center;
+    border: black solid 3px;
+    corner-shape: notch;
+    border-radius: 2px;
+    background-color: white;
+    width: 14rem;
+    margin: auto;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+
 }
 
 .normal {
