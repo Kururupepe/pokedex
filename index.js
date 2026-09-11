@@ -63,6 +63,53 @@ async function getPokemon(pokemonName) {
     return result
 }
 
+const numMissing = document.getElementById("pokenumber")
+const nameMissing = document.getElementById("name")
+const genMissing = document.getElementById("genera")
+const spriteMissing = document.getElementById("sprites")
+const cryMissing = document.getElementById("cry")
+const type1Missing = document.getElementById("type1")
+const type2Missing = document.getElementById("type2")
+const weightMissing = document.getElementById("weight")
+const heightMissing = document.getElementById("height")
+const descMissing = document.getElementById("description")
+
+const defaultPokemon = {
+    id: numMissing.textContent,
+    name: nameMissing.textContent,
+    genera: genMissing.textContent,
+    sprite: spriteMissing.src,
+    cry: cryMissing.src,
+
+    type1: type1Missing.textContent,
+    type1Class: type1Missing.className,
+
+    type2: type2Missing.textContent,
+    type2Class: type2Missing.className,
+
+    weight: weightMissing.textContent,
+    height: heightMissing.textContent,
+    description: descMissing.textContent,
+}
+function resetPokemon() {
+    numMissing.textContent = defaultPokemon.id
+    nameMissing.textContent = defaultPokemon.name
+    genMissing.textContent = defaultPokemon.genera
+    spriteMissing.src = defaultPokemon.sprite
+    cryMissing.src = defaultPokemon.cry
+
+    type1Missing.textContent = defaultPokemon.type1
+    type1Missing.className = defaultPokemon.type1Class
+
+    type2Missing.textContent = defaultPokemon.type2
+    type2Missing.className = defaultPokemon.type2Class
+    type2Missing.style.display = ""
+
+    weightMissing.textContent = defaultPokemon.weight
+    heightMissing.textContent = defaultPokemon.height
+    descMissing.textContent = defaultPokemon.description
+}
+
 const button = document.querySelector('.sound-btn');
 const audio = document.getElementById('cry');
 
@@ -82,6 +129,9 @@ async function search() {
 
     if (ditto === null) {
         errordiv.style.display = "block";
+        resetPokemon()
+        return
+
     } else {
         errordiv.style.display = "none";
     }

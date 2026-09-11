@@ -130,7 +130,7 @@ header .lng {
     border: #40524e solid 4px;
     border-radius: 5px;
     background: white;
-    margin-top: 20px;
+    margin-top: 43px;
     corner-shape: notch;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
 
@@ -164,11 +164,7 @@ header .lng {
 #type {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
-
-    @media (min-width: 768px) {
-        margin-right: 400px;
-    }
+    justify-content: center;
 }
 
 .type {
@@ -200,7 +196,8 @@ header .lng {
     width: 200px;
     height: 70px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    margin-left: 55px;
+    margin-left: 54px;
+    margin-top: 40px;
 }
 
 .WT {
@@ -223,7 +220,7 @@ header .lng {
 }
 
 .desc-border {
-    margin: 20px 35px 0px 35px;
+    margin: 30px 35px 0px 35px;
     border: black solid 4px;
     min-width: 350px;
     corner-shape: notch;
