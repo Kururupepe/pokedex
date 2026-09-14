@@ -51,70 +51,73 @@ async function getPokemon(pokemonName) {
     let result = {
         id: pokemon.id,
         name: pokemon.name,
-        description: getDescription(species.flavor_text_entries),
+        description: getDescription(species.flavor_text_entries).replace("\f", " "),
         cry: pokemon.cries.latest,
         types: pokemon.types,
         sprite: pokemon.sprites.front_default,
         genera: getGenera(species.genera),
-        weight: pokemon.weight,
-        height: pokemon.height,
+        weight: pokemon.weight / 10 + " kg",
+        height: pokemon.height / 10 + " m",
     }
-
     return result
 }
 
-const numMissing = document.getElementById("pokenumber")
-const nameMissing = document.getElementById("name")
-const genMissing = document.getElementById("genera")
-const spriteMissing = document.getElementById("sprites")
-const cryMissing = document.getElementById("cry")
-const type1Missing = document.getElementById("type1")
-const type2Missing = document.getElementById("type2")
-const weightMissing = document.getElementById("weight")
-const heightMissing = document.getElementById("height")
-const descMissing = document.getElementById("description")
+const numpoke = document.getElementById("pokenumber")
+const namepoke = document.getElementById("name")
+const genpoke = document.getElementById("genera")
+const spritepoke = document.getElementById("sprites")
+const crypoke = document.getElementById("cry")
+const type1poke = document.getElementById("type1")
+const type2poke = document.getElementById("type2")
+const weightpoke = document.getElementById("weight")
+const heightpoke = document.getElementById("height")
+const descpoke = document.getElementById("description")
 
 const defaultPokemon = {
-    id: numMissing.textContent,
-    name: nameMissing.textContent,
-    genera: genMissing.textContent,
-    sprite: spriteMissing.src,
-    cry: cryMissing.src,
-
-    type1: type1Missing.textContent,
-    type1Class: type1Missing.className,
-
-    type2: type2Missing.textContent,
-    type2Class: type2Missing.className,
-
-    weight: weightMissing.textContent,
-    height: heightMissing.textContent,
-    description: descMissing.textContent,
+    id: "000",
+    name: "MissingNo.",
+    genera: "??? pokemon",
+    sprite: "assets/misigno.png",
+    cry: "assets/MissingNo.mp3",
+    types: [
+        { type: { name: "???" } },
+        { type: { name: "???" } },
+    ],
+    weight: "9.5 kg",
+    height: "0.9 m",
+    description: `MissingNO is a programming quirk, and not a real part of the game. When you get this, your game can perform strangely,
+and the graphics will often become scrambled.The MissingNO Pokémon is most often found after you perform the Fight Safari Zone Pokémon trick.`,
 }
-function resetPokemon() {
-    numMissing.textContent = defaultPokemon.id
-    nameMissing.textContent = defaultPokemon.name
-    genMissing.textContent = defaultPokemon.genera
-    spriteMissing.src = defaultPokemon.sprite
-    cryMissing.src = defaultPokemon.cry
 
-    type1Missing.textContent = defaultPokemon.type1
-    type1Missing.className = defaultPokemon.type1Class
+function resetPokemon(pokemon) {
+    numpoke.textContent = pokemon.id
+    namepoke.textContent = pokemon.name
+    genpoke.textContent = pokemon.genera
+    spritepoke.src = pokemon.sprite
+    crypoke.src = pokemon.cry
 
-    type2Missing.textContent = defaultPokemon.type2
-    type2Missing.className = defaultPokemon.type2Class
-    type2Missing.style.display = ""
+    type1poke.textContent = pokemon.types[0].type.name
+    type1poke.className = `type ${pokemon.types[0].type.name}`
 
-    weightMissing.textContent = defaultPokemon.weight
-    heightMissing.textContent = defaultPokemon.height
-    descMissing.textContent = defaultPokemon.description
+    if (pokemon.types[1] !== undefined) {
+        type2poke.style.display = "inline-block";
+        type2poke.textContent = pokemon.types[1].type.name
+        type2poke.className = `type ${pokemon.types[1].type.name}`
+    } else {
+        type2poke.style.display = "none";
+    }
+    weightpoke.textContent = pokemon.weight
+    heightpoke.textContent = pokemon.height
+    descpoke.textContent = pokemon.description
 }
+
+resetPokemon(defaultPokemon)
 
 const button = document.querySelector('.sound-btn');
 const audio = document.getElementById('cry');
 
 button.addEventListener('click', () => {
-    audio.currentTime = 0; // Rewind to start if clicked repeatedly
+    audio.currentTime = 0;
     audio.play();
     audio.volume = 0.4;
 });
@@ -129,49 +132,14 @@ async function search() {
 
     if (ditto === null) {
         errordiv.style.display = "block";
-        resetPokemon()
+        resetPokemon(defaultPokemon)
         return
 
     } else {
         errordiv.style.display = "none";
     }
 
-    const numPoke = document.getElementById("pokenumber")
-    numPoke.textContent = ditto.id
-
-    const namePoke = document.getElementById("name")
-    namePoke.textContent = ditto.name
-
-    const genPoke = document.getElementById("genera")
-    genPoke.textContent = ditto.genera
-
-    const spritePoke = document.getElementById("sprites")
-    spritePoke.setAttribute("src", ditto.sprite)
-
-    const cryPoke = document.getElementById("cry")
-    cryPoke.setAttribute("src", ditto.cry)
-
-    const type1Poke = document.getElementById("type1")
-    type1Poke.textContent = ditto.types[0].type.name
-    type1Poke.className = `type ${ditto.types[0].type.name}`
-
-    const type2Poke = document.getElementById("type2")
-    if (ditto.types[1] !== undefined) {
-        type2Poke.style.display = "inline-block";
-        type2Poke.textContent = ditto.types[1].type.name
-        type2Poke.className = `type ${ditto.types[1].type.name}`
-    } else {
-        type2Poke.style.display = "none";
-    }
-
-    const weightPoke = document.getElementById("weight")
-    weightPoke.textContent = ditto.weight / 10 + " kg"
-
-    const heightPoke = document.getElementById("height")
-    heightPoke.textContent = ditto.height / 10 + " m"
-
-    const descPoke = document.getElementById("description")
-    descPoke.textContent = ditto.description.replace("\f", " ")
+    resetPokemon(ditto)
 };
 
 sbutton.addEventListener("click", search);
