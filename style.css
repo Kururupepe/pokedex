@@ -25,6 +25,11 @@ body {
     }
 }
 
+.about {
+    text-decoration: none;
+    color: black;
+}
+
 .content {
     display: flex;
     flex-direction: column;
